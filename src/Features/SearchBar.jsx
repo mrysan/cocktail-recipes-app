@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   const [searchBarText, setSearchBarText] = useState("");
 
   const handleSearch = (event) => {
     event.preventDefault();
     setSearchBarText("");
-
-    // api call
-
-    return "";
+    onSearch(searchBarText.toLocaleLowerCase().trim());
   };
 
   return (

@@ -1,10 +1,17 @@
 import SearchBar from "../Features/SearchBar";
+import { useState } from "react";
 
-function Home() {
+function Home({ getCocktailByName }) {
+  const [cocktailResults, setCocktailResults] = useState([]);
+
+  const onSearch = async (cocktailName) => {
+    const result = await getCocktailByName(cocktailName);
+    setCocktailResults([...result.drinks]);
+  };
+  console.log(cocktailResults);
   return (
     <div>
-      <h1>Home Page</h1>
-      <SearchBar />
+      <SearchBar onSearch={onSearch} />
     </div>
   );
 }

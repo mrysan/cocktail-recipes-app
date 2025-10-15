@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "the-cocktail-db": "^0.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
