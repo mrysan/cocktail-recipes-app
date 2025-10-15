@@ -1,6 +1,7 @@
 .container {
-  width: 500px;
+  width: 750px;
   height: 500px;
-  border: 2px;
-  background-color: red;
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
 }

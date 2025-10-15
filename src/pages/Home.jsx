@@ -7,7 +7,10 @@ function Home({ getCocktailByName }) {
 
   const onSearch = async (cocktailName) => {
     const result = await getCocktailByName(cocktailName);
-    setCocktailResults([...result.drinks]);
+
+    if (Array.isArray(result.drinks)) {
+      setCocktailResults([...result.drinks]);
+    }
   };
   console.log(cocktailResults);
   return (
@@ -16,7 +19,7 @@ function Home({ getCocktailByName }) {
         <SearchBar onSearch={onSearch} />
       </div>
       <div>
-        <CocktailContainer />
+        <CocktailContainer cocktailList={cocktailResults} />
       </div>
     </>
   );
