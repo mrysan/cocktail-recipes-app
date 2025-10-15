@@ -1,5 +1,6 @@
 import SearchBar from "../Features/SearchBar";
 import { useState } from "react";
+import CocktailContainer from "../shared/CocktailContainer";
 
 function Home({ getCocktailByName }) {
   const [cocktailResults, setCocktailResults] = useState([]);
@@ -10,9 +11,14 @@ function Home({ getCocktailByName }) {
   };
   console.log(cocktailResults);
   return (
-    <div>
-      <SearchBar onSearch={onSearch} />
-    </div>
+    <>
+      <div>
+        <SearchBar onSearch={onSearch} />
+      </div>
+      <div>
+        <CocktailContainer />
+      </div>
+    </>
   );
 }
 export default Home;
