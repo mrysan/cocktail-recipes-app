@@ -1,6 +1,11 @@
 import { useState } from "react";
-import Home from "./pages/Home.jsx";
+import { Routes, Route } from "react-router";
 import { CocktailDbApi } from "the-cocktail-db";
+import Home from "./pages/Home.jsx";
+import Header from "./shared/Header.jsx";
+import Favorites from "./pages/Favorites.jsx";
+import About from "./pages/About.jsx";
+
 const cocktailDbApi = new CocktailDbApi({
   apiKey: 1,
   version: 1,
@@ -18,10 +23,17 @@ function App() {
   return (
     <>
       <div>
-        <h2>Header</h2>
+        <Header />
       </div>
       <div>
-        <Home getCocktailByName={getCocktailByName} />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home getCocktailByName={getCocktailByName} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
       </div>
     </>
   );
