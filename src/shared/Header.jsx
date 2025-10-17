@@ -6,7 +6,6 @@ function Header() {
     <div className={styles.header}>
       <nav>
         <NavLink to={"/"}>Home</NavLink>
-
         <NavLink to={"/favorites"}>Favorites</NavLink>
         <NavLink to={"/about"}>About</NavLink>
       </nav>

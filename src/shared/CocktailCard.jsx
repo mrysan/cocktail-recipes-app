@@ -1,11 +1,19 @@
 import styles from "./CocktailCard.module.css";
 
-function CocktailCard({ name, imageSrc }) {
+function CocktailCard({ cocktail, onClick }) {
+  function handleClick() {
+    onClick(cocktail);
+  }
+
   return (
-    <div className={styles.card}>
-      <h4>{name}</h4>
-      <img src={imageSrc} width="125px" height="125px"></img>
-    </div>
+    <>
+      <div>
+        <button className={styles.card} onClick={handleClick}>
+          <h4>{cocktail.strDrink}</h4>
+          <img src={cocktail.strDrinkThumb} width="150px" height="150px"></img>
+        </button>
+      </div>
+    </>
   );
 }
 

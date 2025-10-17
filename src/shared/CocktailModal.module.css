@@ -1,0 +1,42 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.dialogPanel {
+  max-width: 32rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  padding: 3rem;
+}
+
+.modalMenu {
+  display: flex;
+  gap: 1rem;
+}
+
+.dialog {
+  position: relative;
+  z-index: 50;
+}
+
+.dialogBackdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* .dialogPanel > * + * {
+  margin-top: 1rem;
+} */
