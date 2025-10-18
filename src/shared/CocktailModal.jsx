@@ -9,13 +9,25 @@ import { useState, useEffect } from "react";
 import styles from "./CocktailModal.module.css";
 
 export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
-  function recipeList() {
+  const recipeList = () => {
     let list = [];
-    for (let i = 0; i < 15; i++) {
-      list.push(<p> i </p>);
+    if (Object.keys(cocktail).length === 0) {
+      return list;
+    }
+    // only load as many ingredients as there are in the recipe
+    for (let i = 1; i < 16; i++) {
+      if (cocktail["strMeasure" + i] || cocktail["strIngredient" + i]) {
+        let ingredient = `${
+          cocktail["strMeasure" + i] ? cocktail["strMeasure" + i] : ""
+        } ${cocktail["strIngredient" + i]}`;
+        // second item will serve as key
+        list.push([ingredient, `item${i}`]);
+      } else {
+        return list;
+      }
     }
     return list;
-  }
+  };
 
   return (
     <div>
@@ -27,27 +39,16 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
         <DialogBackdrop className={styles.dialogBackdrop} />
         <div className={styles.modalContainer}>
           <DialogPanel className={styles.dialogPanel}>
-            <DialogTitle>{cocktail.strDrink}</DialogTitle>
-            <Description>{cocktail.strInstructions}</Description>
-            {/* to-do: Make iterable and display as many p as there are measures */}
-            {recipeList}
-            <p>
-              {cocktail.strMeasure1} {cocktail.strIngredient1}
-            </p>
-            <p>
-              {cocktail.strMeasure2} {cocktail.strIngredient2}
-            </p>
-            <p>
-              {cocktail.strMeasure3} {cocktail.strIngredient3}
-            </p>
+            <DialogTitle>{cocktail ? cocktail.strDrink : ""}</DialogTitle>
+            <Description>
+              {cocktail ? cocktail.strInstructions : ""}
+            </Description>
 
-            {() => {
-              let x = [];
-              for (let i = 0; i < 5; i++) {
-                x.push(<p>i</p>);
-              }
-              return x;
-            }}
+            <div>
+              {recipeList().map((item) => {
+                return <p key={item[1]}> {item[0]}</p>;
+              })}
+            </div>
 
             <div className={styles.modalMenu}>
               <button onClick={() => setIsOpen(false)}>Close</button>
