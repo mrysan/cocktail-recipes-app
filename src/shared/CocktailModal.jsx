@@ -56,7 +56,7 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
           cocktail["strMeasure" + i] ? cocktail["strMeasure" + i] : ""
         } ${cocktail["strIngredient" + i]}`;
         // second item will serve as key
-        list.push([ingredient, `item${i}`]);
+        list.push([ingredient, `${cocktail.idDrink}-${ingredient}`]);
       } else {
         return list;
       }
