@@ -8,11 +8,9 @@ export default function Favorites() {
 
   useEffect(() => {
     const favorites = getFavorites();
-
     setFavoriteCocktails(Object.values(favorites));
   }, []);
 
-  console.log();
   return (
     <>
       <div>

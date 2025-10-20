@@ -1,5 +1,3 @@
-let favorites = {};
-
 function addFavorite(cocktail) {
   let favorites = JSON.parse(localStorage.getItem("favorites"));
   favorites[cocktail.idDrink] = cocktail;
