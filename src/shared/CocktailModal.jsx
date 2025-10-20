@@ -7,8 +7,43 @@ import {
 } from "@headlessui/react";
 import { useState, useEffect } from "react";
 import styles from "./CocktailModal.module.css";
+import {
+  addFavorite,
+  removeFavorite,
+  isFavorite,
+} from "../storage/favoriteCocktails";
 
 export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
+  const [isModalCocktailFavorite, setisModalCocktailFavorite] = useState(false);
+  const [modalCocktail, setIsModalCocktail] = useState(cocktail);
+
+  // Used to add/remove favorite cocktails in local storage
+  useEffect(() => {
+    // only runs when new cocktail is clicked
+    if (modalCocktail != cocktail) {
+      setisModalCocktailFavorite(isFavorite(cocktail));
+      setIsModalCocktail(cocktail);
+      return;
+    }
+
+    if (isModalCocktailFavorite === true && !isFavorite(modalCocktail)) {
+      addFavorite(modalCocktail);
+      return;
+    }
+    if (isModalCocktailFavorite === false && isFavorite(modalCocktail)) {
+      removeFavorite(modalCocktail);
+      return;
+    }
+  }, [isModalCocktailFavorite, cocktail, modalCocktail]);
+
+  function handleFavoriteClick() {
+    setisModalCocktailFavorite(true);
+  }
+
+  function handleUnfavoriteClick() {
+    setisModalCocktailFavorite(false);
+  }
+
   const recipeList = () => {
     let list = [];
     if (Object.keys(cocktail).length === 0) {
@@ -39,7 +74,14 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
         <DialogBackdrop className={styles.dialogBackdrop} />
         <div className={styles.modalContainer}>
           <DialogPanel className={styles.dialogPanel}>
-            <DialogTitle>{cocktail ? cocktail.strDrink : ""}</DialogTitle>
+            <DialogTitle>
+              {cocktail ? cocktail.strDrink : ""}
+              {isModalCocktailFavorite ? (
+                <button onClick={handleUnfavoriteClick}>Un-Favorite 💔</button>
+              ) : (
+                <button onClick={handleFavoriteClick}>Favorite ❤️</button>
+              )}
+            </DialogTitle>
             <Description>
               {cocktail ? cocktail.strInstructions : ""}
             </Description>
