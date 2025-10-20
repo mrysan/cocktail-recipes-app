@@ -4,7 +4,7 @@ import Home from "./pages/Home.jsx";
 import Header from "./shared/Header.jsx";
 import Favorites from "./pages/Favorites.jsx";
 import About from "./pages/About.jsx";
-
+import NotFound from "./pages/NotFound.jsx";
 //import './App.css'
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </>
