@@ -1,7 +1,7 @@
 import styles from "./CocktailContainer.module.css";
-import CocktailCard from "./CocktailCard";
-import CocktailModal from "./CocktailModal";
-import { useState, useEffect } from "react";
+import CocktailCard from "../shared/CocktailCard";
+import CocktailModal from "../shared/CocktailModal";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, useNavigate } from "react-router";
 
 function CocktailContainer({ cocktailList, isLoading }) {
@@ -35,10 +35,10 @@ function CocktailContainer({ cocktailList, isLoading }) {
     setSearchParams(`?page=${currentPage + 1}`);
   }
 
-  function hanldeCardClick(cocktailItem) {
+  const handleCardClick = useCallback((cocktailItem) => {
     setModalCocktail(cocktailItem);
     setIsModalOpen(true);
-  }
+  }, []);
 
   return (
     <>
@@ -51,7 +51,7 @@ function CocktailContainer({ cocktailList, isLoading }) {
               <CocktailCard
                 key={cocktailItem.idDrink}
                 cocktail={cocktailItem}
-                onClick={hanldeCardClick}
+                onClick={handleCardClick}
               />
             );
           })

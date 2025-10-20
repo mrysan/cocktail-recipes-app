@@ -1,6 +1,6 @@
 import SearchBar from "../Features/SearchBar";
 import { useState, useEffect } from "react";
-import CocktailContainer from "../shared/CocktailContainer";
+import CocktailContainer from "../Features/CocktailContainer";
 import { CocktailDbApi } from "the-cocktail-db";
 
 const cocktailDbApi = new CocktailDbApi({

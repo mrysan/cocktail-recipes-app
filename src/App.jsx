@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router";
 
 import Home from "./pages/Home.jsx";
-import Header from "./shared/Header.jsx";
+import Header from "./Features/Header.jsx";
 import Favorites from "./pages/Favorites.jsx";
 import About from "./pages/About.jsx";
 import NotFound from "./pages/NotFound.jsx";
