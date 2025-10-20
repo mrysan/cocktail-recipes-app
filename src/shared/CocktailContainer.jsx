@@ -4,7 +4,7 @@ import CocktailModal from "./CocktailModal";
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router";
 
-function CocktailContainer({ cocktailList }) {
+function CocktailContainer({ cocktailList, isLoading }) {
   const [modalCocktail, setModalCocktail] = useState({});
   let [isModalOpen, setIsModalOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -43,8 +43,8 @@ function CocktailContainer({ cocktailList }) {
   return (
     <>
       <div className={styles.container}>
-        {cocktailList.length < 1 ? (
-          <></>
+        {cocktailList.length < 1 || isLoading ? (
+          <p>Loading Cocktails...</p>
         ) : (
           cocktailList.slice(startIndex, endIndex).map((cocktailItem) => {
             return (
