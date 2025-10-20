@@ -10,8 +10,7 @@ const cocktailDbApi = new CocktailDbApi({
 
 function Home() {
   const [cocktailResults, setCocktailResults] = useState([]);
-  const [searchLetter, setSearchLetter] = useState("B");
-  const [searchBarText, setSearchBarText] = useState("");
+  const [searchLetter, setSearchLetter] = useState("A");
   const alphabet = [
     "A",
     "B",
@@ -49,7 +48,6 @@ function Home() {
       setCocktailResults(Object.values(result.drinks));
     };
     loadAllCocktails();
-    // remove from loading
   }, [searchLetter]);
 
   async function onSearch(cocktailName) {
