@@ -20,7 +20,7 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
   // Used to add/remove favorite cocktails in local storage
   useEffect(() => {
     // only runs when new cocktail is clicked
-    if (modalCocktail != cocktail) {
+    if (modalCocktail.idDrink != cocktail.idDrink) {
       setisModalCocktailFavorite(isFavorite(cocktail));
       setIsModalCocktail(cocktail);
       return;
@@ -77,9 +77,9 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
             <DialogTitle>
               {cocktail ? cocktail.strDrink : ""}
               {isModalCocktailFavorite ? (
-                <button onClick={handleUnfavoriteClick}>Un-Favorite 💔</button>
+                <button onClick={handleUnfavoriteClick}>💔 Un-Favorite </button>
               ) : (
-                <button onClick={handleFavoriteClick}>Favorite ❤️</button>
+                <button onClick={handleFavoriteClick}>❤️ Favorite </button>
               )}
             </DialogTitle>
             <Description>
