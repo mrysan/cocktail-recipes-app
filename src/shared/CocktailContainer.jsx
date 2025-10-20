@@ -1,13 +1,14 @@
 import styles from "./CocktailContainer.module.css";
 import CocktailCard from "./CocktailCard";
 import CocktailModal from "./CocktailModal";
-import { useState } from "react";
-import { useSearchParams } from "react-router";
+import { useState, useEffect } from "react";
+import { useSearchParams, useNavigate } from "react-router";
 
 function CocktailContainer({ cocktailList }) {
   const [modalCocktail, setModalCocktail] = useState({});
   let [isModalOpen, setIsModalOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const itemsPerPage = 8;
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
@@ -15,10 +16,16 @@ function CocktailContainer({ cocktailList }) {
   const endIndex = startIndex + itemsPerPage;
   const totalPages = Math.ceil(Object.keys(cocktailList).length / itemsPerPage);
 
-  // error handling for incorrect page #
-  if (currentPage < 1 || currentPage > totalPages) {
-    setSearchParams(`?page=${1}`);
-  }
+  // redirect to home page if invalid page # is entered
+  useEffect(() => {
+    // only fire once pages are loaded
+    if (totalPages > 0) {
+      if (isNaN(currentPage) || currentPage < 1 || currentPage > totalPages) {
+        setSearchParams(1);
+        navigate("/");
+      }
+    }
+  }, [currentPage, totalPages, navigate, setSearchParams]);
 
   function handlePreviousPage() {
     setSearchParams(`?page=${currentPage - 1}`);
