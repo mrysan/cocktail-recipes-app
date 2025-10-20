@@ -11,8 +11,9 @@ function SearchBar({ onSearch }) {
 
   return (
     <form action="submit" onSubmit={handleSearch}>
-      <label>Search Cocktail: </label>
+      <label htmlFor="cocktail-search">Search Cocktail: </label>
       <input
+        id="cocktail-search"
         type="text"
         value={searchBarText}
         onChange={(event) => {
