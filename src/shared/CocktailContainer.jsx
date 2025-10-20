@@ -2,36 +2,76 @@ import styles from "./CocktailContainer.module.css";
 import CocktailCard from "./CocktailCard";
 import CocktailModal from "./CocktailModal";
 import { useState } from "react";
+import { useSearchParams } from "react-router";
 
 function CocktailContainer({ cocktailList }) {
   const [modalCocktail, setModalCocktail] = useState({});
   let [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const itemsPerPage = 8;
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const totalPages = Math.ceil(Object.keys(cocktailList).length / itemsPerPage);
+
+  // error handling for incorrect page #
+  if (currentPage < 1 || currentPage > totalPages) {
+    setSearchParams(`?page=${1}`);
+  }
+
+  function handlePreviousPage() {
+    setSearchParams(`?page=${currentPage - 1}`);
+  }
+
+  function handleNextPage() {
+    setSearchParams(`?page=${currentPage + 1}`);
+  }
+
   function hanldeCardClick(cocktailItem) {
     setModalCocktail(cocktailItem);
     setIsModalOpen(true);
   }
 
   return (
-    <div className={styles.container}>
-      {cocktailList.length < 1 ? (
-        <></>
-      ) : (
-        cocktailList.map((cocktailItem) => {
-          return (
-            <CocktailCard
-              key={cocktailItem.idDrink}
-              cocktail={cocktailItem}
-              onClick={hanldeCardClick}
-            />
-          );
-        })
-      )}
-      <CocktailModal
-        cocktail={modalCocktail}
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-      />
-    </div>
+    <>
+      <div className={styles.container}>
+        {cocktailList.length < 1 ? (
+          <></>
+        ) : (
+          cocktailList.slice(startIndex, endIndex).map((cocktailItem) => {
+            return (
+              <CocktailCard
+                key={cocktailItem.idDrink}
+                cocktail={cocktailItem}
+                onClick={hanldeCardClick}
+              />
+            );
+          })
+        )}
+
+        <CocktailModal
+          cocktail={modalCocktail}
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+        />
+      </div>
+
+      <div>
+        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <span>
+          {currentPage} 🍸 {totalPages}
+        </span>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages || totalPages === 0}
+        >
+          Next
+        </button>
+      </div>
+    </>
   );
 }
 export default CocktailContainer;

@@ -12,7 +12,7 @@ function Home({ getCocktailByName }) {
       setCocktailResults([...result.drinks]);
     }
   };
-  console.log(cocktailResults);
+
   return (
     <>
       <div>
