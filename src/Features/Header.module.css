@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  margin: 5px;
+}
+
+.active {
+  font-family: "Roboto", sans-serif;
+  border: solid transparent;
+  border-radius: 16px;
+  border: 1px;
+  color: #fdfdfe;
+  background-color: #ff6b6b82;
+  cursor: not-allowed;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  margin: 3px;
+  text-decoration: none;
+}
+
+.inactive {
+  font-family: "Roboto", sans-serif;
+  border: solid transparent;
+  border-radius: 16px;
+  color: #fffdf6;
+  background-color: #f16d6d;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  text-decoration: none;
+}

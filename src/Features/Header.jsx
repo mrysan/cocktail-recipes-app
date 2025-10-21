@@ -5,9 +5,30 @@ function Header() {
   return (
     <div className={styles.header}>
       <nav>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/favorites"}>Favorites</NavLink>
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) => {
+            return isActive ? styles.active : styles.inactive;
+          }}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to={"/favorites"}
+          className={({ isActive }) => {
+            return isActive ? styles.active : styles.inactive;
+          }}
+        >
+          Favorites
+        </NavLink>
+        <NavLink
+          to={"/about"}
+          className={({ isActive }) => {
+            return isActive ? styles.active : styles.inactive;
+          }}
+        >
+          About
+        </NavLink>
       </nav>
     </div>
   );

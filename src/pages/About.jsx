@@ -3,14 +3,12 @@ export default function About() {
     <div>
       <h1>About</h1>
       <h3>🥃 About This App</h3>
-      <p>
-        This app is your personal mixologist!
-        <ul>
-          <li> Search for cocktails by name</li>
-          <li>Browse cocktails alphabetically</li>
-          <li>Favorite cocktails to view later</li>
-        </ul>
-      </p>
+      This app is your personal mixologist!
+      <ul>
+        <li> Search for cocktails by name</li>
+        <li>Browse cocktails alphabetically</li>
+        <li>Favorite cocktails to view later</li>
+      </ul>
       <h3>🍸 Why I Built This</h3>
       <p>
         This app was built as a final project for the React Bootcamp by Code The
@@ -21,7 +19,6 @@ export default function About() {
         a fusion of my passions: building software and crafting cocktails.
       </p>
       <h3>🙏 Acknowledgments</h3>
-
       <p>
         <a href="https://www.thecocktaildb.com/">TheCocktailDB </a>
         for their free API that is responsible for all the cocktails you see!

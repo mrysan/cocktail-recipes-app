@@ -19,6 +19,7 @@ export default function Favorites() {
         <CocktailContainer
           cocktailList={favoriteCocktails}
           isLoading={isLoading}
+          apiError={""}
         />
       </div>
     </>
