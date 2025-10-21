@@ -43,7 +43,7 @@ function Home() {
     setApiError("");
   }
 
-  // initialize API once
+  // initialize API
   useEffect(() => {
     try {
       cocktailDbApi.current = new CocktailDbApi({
