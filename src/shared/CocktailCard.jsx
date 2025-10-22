@@ -7,10 +7,13 @@ function CocktailCard({ cocktail, onClick }) {
 
   return (
     <>
-      <div>
+      <div className={styles.cardContainer}>
         <button className={styles.card} onClick={handleClick}>
-          <h4>{cocktail.strDrink}</h4>
-          <img src={cocktail.strDrinkThumb} width="150px" height="150px"></img>
+          <p className={styles.cardTitle}>{cocktail.strDrink}</p>
+          <img
+            className={styles.cocktailImage}
+            src={cocktail.strDrinkThumb}
+          ></img>
         </button>
       </div>
     </>

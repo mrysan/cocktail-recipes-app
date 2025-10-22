@@ -1,32 +1,37 @@
 .header {
   display: flex;
-  margin: 5px;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .active {
   font-family: "Roboto", sans-serif;
   border: solid transparent;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px;
   color: #fdfdfe;
-  background-color: #ff6b6b82;
+  background-color: #f08080ab;
   cursor: not-allowed;
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  font-size: 22px;
+  letter-spacing: 1px;
   padding: 10px;
-  margin: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
   text-decoration: none;
 }
 
 .inactive {
   font-family: "Roboto", sans-serif;
   border: solid transparent;
-  border-radius: 16px;
+  border-radius: 12px;
   color: #fffdf6;
-  background-color: #f16d6d;
+  background-color: #f08080;
   cursor: pointer;
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  font-size: 22px;
+  letter-spacing: 1px;
   padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   text-decoration: none;
 }

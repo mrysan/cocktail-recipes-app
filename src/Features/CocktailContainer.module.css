@@ -1,7 +1,30 @@
 .container {
   width: 750px;
   height: 500px;
-  border: 2px solid black;
+  border: 3px solid #f08080;
+  border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.navButton {
+  font-family: "Roboto", sans-serif;
+  border: solid transparent;
+  border-radius: 12px;
+  border: 1px;
+  color: #fdfdfe;
+  background-color: #f08080;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
 }

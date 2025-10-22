@@ -1,0 +1,23 @@
+.letterButton {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fdfdfe;
+  background-color: #f08080;
+  border: transparent;
+  border-radius: 5px;
+  border: 1px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.searchBarContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

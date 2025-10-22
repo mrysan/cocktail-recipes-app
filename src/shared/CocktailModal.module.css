@@ -16,11 +16,19 @@
   border: 1px solid #e5e7eb;
   background-color: white;
   padding: 3rem;
+  background-color: beige;
+  border-radius: 18px;
 }
 
 .modalMenu {
   display: flex;
   gap: 1rem;
+}
+
+.dialogTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dialog {
@@ -35,6 +43,22 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modalButton {
+  font-family: "Roboto", sans-serif;
+  border: solid transparent;
+  border-radius: 12px;
+  border: 1px;
+
+  background-color: #f4c2c2;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
 }
 
 /* .dialogPanel > * + * {

@@ -74,12 +74,22 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
         <DialogBackdrop className={styles.dialogBackdrop} />
         <div className={styles.modalContainer}>
           <DialogPanel className={styles.dialogPanel}>
-            <DialogTitle>
+            <DialogTitle className={styles.dialogTitle}>
               {cocktail ? cocktail.strDrink : ""}
               {isModalCocktailFavorite ? (
-                <button onClick={handleUnfavoriteClick}>💔 Un-Favorite </button>
+                <button
+                  className={styles.modalButton}
+                  onClick={handleUnfavoriteClick}
+                >
+                  💔 Un-Favorite{" "}
+                </button>
               ) : (
-                <button onClick={handleFavoriteClick}>❤️ Favorite </button>
+                <button
+                  className={styles.modalButton}
+                  onClick={handleFavoriteClick}
+                >
+                  ❤️ Favorite{" "}
+                </button>
               )}
             </DialogTitle>
             <Description>
@@ -93,7 +103,12 @@ export default function CocktailModal({ cocktail, isOpen, setIsOpen }) {
             </div>
 
             <div className={styles.modalMenu}>
-              <button onClick={() => setIsOpen(false)}>Close</button>
+              <button
+                className={styles.modalButton}
+                onClick={() => setIsOpen(false)}
+              >
+                Close
+              </button>
             </div>
           </DialogPanel>
         </div>

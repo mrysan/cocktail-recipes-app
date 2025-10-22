@@ -2,7 +2,7 @@ import SearchBar from "../Features/SearchBar";
 import { useState, useEffect, useRef } from "react";
 import CocktailContainer from "../Features/CocktailContainer";
 import { CocktailDbApi } from "the-cocktail-db";
-
+import styles from "./Home.module.css";
 function Home() {
   const [cocktailResults, setCocktailResults] = useState([]);
   const [searchLetter, setSearchLetter] = useState("A");
@@ -102,15 +102,16 @@ function Home() {
 
   return (
     <>
-      <div>
+      <div className={styles.searchBarContainer}>
         <SearchBar onSearch={onSearch} />
       </div>
-      <div>
+      <div className={styles.buttonContainer}>
         {alphabet.map((letter) => {
           return (
             <button
               key={"cocktails_starting_" + letter}
               onClick={onLetterClick}
+              className={styles.letterButton}
             >
               {letter}
             </button>

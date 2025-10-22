@@ -1,0 +1,22 @@
+.searchButton {
+  font-family: "Roboto", sans-serif;
+  border: solid transparent;
+  border-radius: 12px;
+  border: 1px;
+  color: #fdfdfe;
+  background-color: #f08080;
+  cursor: not-allowed;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.searchInput {
+  height: 20px;
+  width: 300px;
+  border-radius: 12px;
+  border: solid transparent;
+}

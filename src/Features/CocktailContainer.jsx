@@ -80,14 +80,19 @@ function CocktailContainer({
         />
       </div>
 
-      <div>
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+      <div className={styles.navContainer}>
+        <button
+          className={styles.navButton}
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+        >
           Previous
         </button>
         <span>
           {currentPage} 🍸 {totalPages}
         </span>
         <button
+          className={styles.navButton}
           onClick={handleNextPage}
           disabled={currentPage === totalPages || totalPages === 0}
         >
