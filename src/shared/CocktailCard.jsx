@@ -11,6 +11,7 @@ function CocktailCard({ cocktail, onClick }) {
         <button className={styles.card} onClick={handleClick}>
           <p className={styles.cardTitle}>{cocktail.strDrink}</p>
           <img
+            alt={cocktail.strDrink}
             className={styles.cocktailImage}
             src={cocktail.strDrinkThumb}
           ></img>

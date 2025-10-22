@@ -1,7 +1,7 @@
 .card {
   /* border: 2px solid black; */
+
   margin: 10px;
-  margin-top: 20px;
   width: 160px;
   height: 60px;
   padding: 0px;
@@ -12,6 +12,9 @@
   border-left-width: 0px;
   border-right-width: 0px;
   cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.75px;
+  font-family: "Roboto", sans-serif;
 }
 
 .cocktailImage {

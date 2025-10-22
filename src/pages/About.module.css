@@ -5,8 +5,10 @@
   border-radius: 12px;
   padding: 20px;
   font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .heading {
+  font-family: "Roboto", sans-serif;
   font-size: 25px;
 }

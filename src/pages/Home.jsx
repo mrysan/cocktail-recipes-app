@@ -75,6 +75,10 @@ function Home() {
     if (!cocktailDbApi.current) {
       return;
     }
+    if (searchLetter.length === 0) {
+      return;
+    }
+
     loadAllCocktails();
   }, [searchLetter]);
 
@@ -87,6 +91,7 @@ function Home() {
       if (Array.isArray(result.drinks)) {
         setCocktailResults([...result.drinks]);
       }
+      setSearchLetter("");
     } catch (error) {
       console.log(error);
       setApiError("API ERROR HAS OCCURED: \n" + error);

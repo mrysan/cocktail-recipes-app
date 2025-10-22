@@ -46,7 +46,7 @@ function CocktailContainer({
   }, []);
 
   return (
-    <>
+    <div>
       <div className={styles.container}>
         {apiError.length > 0 ? (
           <div>
@@ -101,7 +101,7 @@ function CocktailContainer({
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 }
 export default CocktailContainer;

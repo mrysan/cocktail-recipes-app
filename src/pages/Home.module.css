@@ -12,12 +12,12 @@
 .buttonContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
 .searchBarContainer {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 15px;
 }
