@@ -1,4 +1,4 @@
-# 🍸 Cocktail Recipes App
+# Cocktail Recipes App
 
 This is a React application built with [Vite](https://vitejs.dev/) that allows users to view detailed recipes for a variety of cocktails.
 
@@ -6,11 +6,12 @@ Users can search by name, browse alphabetically, save favorite cocktails, and vi
 
 The app fetches real-time data from [The Cocktail DB](https://www.thecocktaildb.com/), a free and public cocktail recipe API.
 
-## 📦 Dependencies
+## Dependencies
 
 - **React**
 - **Vite**
-- **[Headless UI](https://headlessui.com)** – Library with Modal UI Components used to display cocktail details
+- **[Headless UI](https://headlessui.com)** – Library with Modal UI Components. Manipulates the DOM.
+- **[The Cocktail DB](https://www.thecocktaildb.com)** – An open, crowd-sourced database of cocktails with a free cocktail API
 - **[the-cocktail-db](https://www.npmjs.com/package/the-cocktail-db)** – An unofficial API Library used to interact with The Cocktail DB
 
 ---
