@@ -1,5 +1,12 @@
 function addFavorite(cocktail) {
   let favorites = JSON.parse(localStorage.getItem("favorites"));
+  // turn "favorites" in localStorage into an object if first time adding
+  if (favorites === null) {
+    let temp = {};
+    temp[cocktail.idDrink] = cocktail;
+    localStorage.setItem("favorites", JSON.stringify(temp));
+    return;
+  }
   favorites[cocktail.idDrink] = cocktail;
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
@@ -12,16 +19,16 @@ function removeFavorite(cocktail) {
 
 // returns true if cocktail is saved as a favorite, else false
 function isFavorite(cocktail) {
-  if (cocktail.idDrink) {
-    const favorites = JSON.parse(localStorage.getItem("favorites"));
+  const favorites = JSON.parse(localStorage.getItem("favorites"));
+  if (favorites != null && Object.keys(cocktail).length > 0) {
     return favorites[cocktail.idDrink];
   }
+
   return false;
 }
 
 // returns an object of all the favorite cocktails
 function getFavorites() {
-  console.log(JSON.parse(localStorage.getItem("favorites")));
   return JSON.parse(localStorage.getItem("favorites"));
 }
 
