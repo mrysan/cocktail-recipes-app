@@ -1,21 +1,21 @@
 # 🍸 Cocktail Recipes App
 
-This is a React application built with [Vite](https://vitejs.dev/) that allows users to browse, search, and view detailed recipes for a variety of cocktails.
-Users can search by name, browse alphabetically, save favorite cocktails, and view recipe details in a modal interface.
-The app fetches real-time data from [The Cocktail DB](https://www.thecocktaildb.com/), a free and public cocktail recipe API.
+This is a React application built with [Vite](https://vitejs.dev/) that allows users to view detailed recipes for a variety of cocktails.
 
----
+Users can search by name, browse alphabetically, save favorite cocktails, and view recipe details in a modal interface.
+
+The app fetches real-time data from [The Cocktail DB](https://www.thecocktaildb.com/), a free and public cocktail recipe API.
 
 ## 📦 Dependencies
 
 - **React**
 - **Vite**
-- **Headless UI** – Library with Modal UI Components used to display cocktail details
-- **the-cocktail-db** – An unofficial API Library used to interact with The Cocktail DB
+- **[Headless UI](https://headlessui.com)** – Library with Modal UI Components used to display cocktail details
+- **[the-cocktail-db](https://www.npmjs.com/package/the-cocktail-db)** – An unofficial API Library used to interact with The Cocktail DB
 
 ---
 
-# 🛠️ Installation
+## Installation
 
 1. **Navigate to a Local Directory and Clone the Repository**
 
@@ -35,9 +35,9 @@ The app fetches real-time data from [The Cocktail DB](https://www.thecocktaildb.
    npm install
    ```
 
-# 🛠️ API Configuration
+## API Configuration
 
-1. **Create a File for Environmental vriables**
+1. **Create a File for Environmental variables**
 
    - Create new `.env.local` in the root directory
 
@@ -45,7 +45,7 @@ The app fetches real-time data from [The Cocktail DB](https://www.thecocktaildb.
 
    - Copy the contents from `.env.local.example` file into `.env.local` and hit save
 
-# 🛠️ 🚀 Launch the App!
+## Launch the App!
 
 1. **Run the Development Server**
 
