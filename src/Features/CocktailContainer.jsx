@@ -61,7 +61,7 @@ function CocktailContainer({
 
         {isLoading ? (
           <p>Loading Cocktails...</p>
-        ) : (
+        ) : Object.keys(cocktailList).length > 0 ? (
           cocktailList.slice(startIndex, endIndex).map((cocktailItem) => {
             return (
               <CocktailCard
@@ -71,6 +71,8 @@ function CocktailContainer({
               />
             );
           })
+        ) : (
+          <h3>No favorite cocktails yet! Try adding some! 🍸</h3>
         )}
 
         <CocktailModal

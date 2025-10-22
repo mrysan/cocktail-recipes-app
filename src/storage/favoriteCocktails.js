@@ -12,7 +12,7 @@ function removeFavorite(cocktail) {
 
 // returns true if cocktail is saved as a favorite, else false
 function isFavorite(cocktail) {
-  if (cocktail) {
+  if (cocktail.idDrink) {
     const favorites = JSON.parse(localStorage.getItem("favorites"));
     return favorites[cocktail.idDrink];
   }

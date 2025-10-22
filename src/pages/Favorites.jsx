@@ -9,7 +9,11 @@ export default function Favorites() {
   useEffect(() => {
     setIsLoading(true);
     const favorites = getFavorites();
-    setFavoriteCocktails(Object.values(favorites));
+    if (favorites) {
+      setFavoriteCocktails(Object.values(favorites));
+    } else {
+      setFavoriteCocktails({});
+    }
     setIsLoading(false);
   }, []);
 
